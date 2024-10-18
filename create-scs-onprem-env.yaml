@@ -11,7 +11,7 @@ spec:
     - title: SCS onprem
       properties:
         deployment_prefix:
-          title: Cluster Unique Prefix
+          title: Environment Name
           type: string
         token:
           title: Harness Token
@@ -20,7 +20,7 @@ spec:
           ui:field: HarnessAuthToken
   steps:
     - id: trigger
-      name: Provisioning your Infrastructure
+      name: Deploy your SCS Onprem Environment
       action: trigger:harness-custom-pipeline
       input:
         ## Update this pipeline with the actual pipeline, make sure to have pipeline inputs - min_nodes, max_nodes, deployment_prefix, location and scale mode
