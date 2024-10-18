@@ -10,6 +10,9 @@ spec:
   parameters:
     - title: Deploy
       properties:
+        deployment_prefix:
+          title: environment
+          type: string
         token:
           title: Harness Token
           type: string
@@ -21,6 +24,8 @@ spec:
       action: trigger:harness-custom-pipeline
       input:
         url: 'https://app.harness.io/ng/account/WhWgKpKNQSuUlombNLvtRw/module/cd/orgs/EDAGSCS/projects/SCS_Test_Lab/pipelines/scsonpremservicesdeploy/pipeline-studio?storeType=INLINE'
+        inputset:
+          deployment_prefix: test
         apikey: ${{ parameters.token }}
   output:
     links:
