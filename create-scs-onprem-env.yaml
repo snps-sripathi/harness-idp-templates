@@ -1,0 +1,34 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: aks_iac
+  title: Deploy AKS Cluster 
+  description: Azure - Deploy AKS
+spec:
+  owner: iacm_team
+  type: environment
+  parameters:
+    - title: Basic Details
+      properties:
+        deployment_prefix:
+          title: Cluster Unique Prefix
+          type: string
+        token:
+          title: Harness Token
+          type: string
+          ui:widget: password
+          ui:field: HarnessAuthToken
+  steps:
+    - id: trigger
+      name: Provisioning your Infrastructure
+      action: trigger:harness-custom-pipeline
+      input:
+        ## Update this pipeline with the actual pipeline, make sure to have pipeline inputs - min_nodes, max_nodes, deployment_prefix, location and scale mode
+        url: 'https://app.harness.io/ng/account/WhWgKpKNQSuUlombNLvtRw/module/cd/orgs/EDAGSCS/projects/SCS_Test_Lab/pipelines/scsonpremservicesdeploy/pipeline-studio?storeType=INLINE'
+        inputset:
+          deployment_prefix: ${{ parameters.deployment_prefix }}
+        apikey: ${{ parameters.token }}
+  output:
+    links:
+      - title: Pipeline Details
+        url: ${{ steps.trigger.output.PipelineUrl }}
