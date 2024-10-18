@@ -2,7 +2,7 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
   name: aks_iac
-  title: Deploy AKS Cluster 
+  title: SCS Onprem Provision Env
   description: Azure - Deploy AKS
 spec:
   owner: iacm_team
