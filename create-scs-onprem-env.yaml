@@ -10,9 +10,6 @@ spec:
   parameters:
     - title: Deploy
       properties:
-        deployment_prefix:
-          title: Environment Name
-          type: string
         token:
           title: Harness Token
           type: string
@@ -23,10 +20,7 @@ spec:
       name: Deploy your SCS Onprem Environment
       action: trigger:harness-custom-pipeline
       input:
-        ## Update this pipeline with the actual pipeline, make sure to have pipeline inputs - min_nodes, max_nodes, deployment_prefix, location and scale mode
         url: 'https://app.harness.io/ng/account/WhWgKpKNQSuUlombNLvtRw/module/cd/orgs/EDAGSCS/projects/SCS_Test_Lab/pipelines/scsonpremservicesdeploy/pipeline-studio?storeType=INLINE'
-        inputset:
-          deployment_prefix: ${{ parameters.deployment_prefix }}
         apikey: ${{ parameters.token }}
   output:
     links:
