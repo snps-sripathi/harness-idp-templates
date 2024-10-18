@@ -3,7 +3,7 @@ kind: Template
 metadata:
   name: aks_iacc
   title: SCS Onprem Provision Env
-  description: Azure - Deploy AKS
+  description: SCS Onprem Provision Env
 spec:
   owner: iacm_team
   type: environment
