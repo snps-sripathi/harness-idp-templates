@@ -2,13 +2,13 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
   name: aks_iacc
-  title: SCS Onprem Provision Env
-  description: SCS Onprem Provision Env
+  title: Provision SCS Onprem Env on K8s
+  description: SCS Onprem Provision Env on K8s
 spec:
   owner: iacm_team
   type: environment
   parameters:
-    - title: SCS onprem
+    - title: Deploy
       properties:
         deployment_prefix:
           title: Environment Name
